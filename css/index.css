@@ -1,0 +1,19 @@
+body, h1 { 
+margin:0; 
+padding:0;
+}
+html, body {
+	height: 100%;
+	text-align: center;
+}
+body {
+	background: #0CADC2;
+}
+input{
+	font-size : 24px;
+	padding: 8px 14px 9px;
+}
+button{
+	font-size : 24px;
+	padding: 8px 14px 9px;
+}

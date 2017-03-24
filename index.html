@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel ="stylesheet" type="text/css" href ="index.css"/>       
+        <title>Actividad 11</title>
+    </head>
+    <script type="text/javascript" charset="utf-8">
+        document.addEventListener("deviceready", onDeviceReady, false);
+    
+    function onDeviceReady() {
+        console.log(navigator.contacts);
+         var options      = new ContactFindOptions();
+         var filter = find.value;
+      options.filter = filter;
+      options.multiple = true;
+        navigator.contacts.find([navigator.contacts.fieldType.displayName],onSuccess,onError,options);
+    }
+
+    var find;
+    function onLoad() {
+        find = document.getElementById('contacto');
+    }
+    function buscar(){
+      document.querySelector('#contactos').innerHTML ="";
+      document.querySelector('#contactos').innerHTML += "  <p>Los contactos "+find.value +" son: </p>" ;
+    onDeviceReady();
+    }
+
+    function onError(contactError) {
+       alert('onError!');
+    }
+    function onSuccess(contacts) {
+        document.querySelector('#contactos').innerHTML += contacts.length;
+        for(var i=0, len=contacts.length; i<len; i++) {
+            console.log("Display Name = " + contacts[i].displayName);
+            document.querySelector('#contactos').innerHTML +="<h3>"+contacts[i].displayName + "</h3>";
+        }
+    }
+</script>
+    <body onLoad="onLoad();">
+    <br><br>
+      
+        <h1 align="center">Actividad 11</h1>
+        <br>
+        <h1 align="center">Eduardo Saldivar</h1>
+        <br>
+        <h1 align="center">2774116</h1>
+        <br><br>
+        <p>Seleccione un contacto</p>
+        <input type="text" name="contacto" id="contacto" placeholder="Buscar contacto"> 
+        <br><br>
+        <button onclick="buscar()" >Buscar contacto</button>  
+        <br>  
+        <div id="contactos" name="contactos"></div>
+
+        <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+        </feature> <br><br><br><br><br><br>
+     <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>

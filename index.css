@@ -1,0 +1,27 @@
+body{
+	background-color: white;
+	font-family: verdana;
+	color: black;
+}
+
+.button{
+ background-color: #B78686;
+}
+
+body, h1 { 
+margin:0; 
+padding:0;
+}
+html, body {
+	height: 100%;
+	text-align: center;
+}
+
+input{
+	font-size : 15px;
+	padding: 8px 14px 9px;
+}
+button{
+	font-size : 15px;
+	padding: 8px 14px 9px;
+}
